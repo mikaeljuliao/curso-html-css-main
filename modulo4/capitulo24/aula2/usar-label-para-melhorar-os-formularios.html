@@ -1,0 +1,82 @@
+<!--
+ para desligar o prenchimento sugerido nos formularios:
+ os formularios tem um texto sugerido para prencher os dados
+  quando clica nos formularios, e tem como desligar
+
+  - desligar: idno na abertura da tag < form> colocando autocomplete 
+  com valor off
+  ex:
+    <form autocomplete="off">
+        <p>sobrenome <input type="text" name="nome" id="nome"></p>
+    </form>
+
+ pra onde vai ser enviado os dados enviados?
+ os dados dos formularios são enviados pra alguam outra linguagem como
+ PHP, java, etc. 
+
+ como enviar os dados pra alguam linguagem?
+ - acition = siginifica acão. dentro da tag <form>, vai disparar uma ação
+    vai ser disparada quando clicar no butão subimite (ou seja, o de enviar)
+ - dentro de acition, coloco para a linguagem que vai está cadastrada o programa
+ que vai cadastrar os dados   
+
+  <form  action="cadastro.php"  autocomplete="off">
+        <p>sobrenome <input type="text" name="nome" id="nome"></p>
+    </form>
+
+
+
+    
+  explicação sobre nome e id em formularios:
+  nome: todo input precisa ter um nome para que linguagem como PHP e ate o html
+  funcione corretamente, támbem dar nome a caixa de input onde o usuario vai digitar
+  input: para linguagem como javascript o id é mais importante
+
+  - eles são muito importante para identificação
+
+  ex: nome: <input type="text" name="nome" id="nome"></p>
+
+
+  como criar ligação das caixas de innput:
+  o navagador não é inteligente o suficiente pra saber 
+  que o texto sobrenome está ligada com a caixa de input de
+  sobrenome, e essa ligação e feita através os labios, dando as 
+  etiquetas
+
+  - com o label eu posso dizer que que a palavra sobrenome é a etiqueta 
+  da caixa de input
+  - para fazer isso eu uso a tag label dentro do texto do <p>.
+    ele vai dar um unico parametro que é o for, quer dizer que ele é
+    um label para quem, no caso o id do input 
+
+    ex:   <p> <label for="inome"> nome: </label>
+         <input type="text" name="nome" id="inome"></p>
+
+   pra aonde os dados foram?
+   até o momento, se eu não direcionar os dados pra nenhum canto, 
+   eles vão para a url do site, vai conter as informaçoes de nome, idade
+   , sobrenome e etc       
+
+  
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="cadastro.php" autocomplete="off">
+        <p> <label for="inome">nome:</label>
+         <input type="text" name="nome" id="inome"></p>
+
+        <p> <label for="isobrenome"> sobrenome:</label> 
+        <input type="text" name="sobrenome" id="isobrenome"></p>
+
+        <p><input type="submit" value="Enviar"></p>
+    </form>
+</body>
+</body>
+</html>

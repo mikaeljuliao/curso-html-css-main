@@ -1,0 +1,118 @@
+
+<!--
+adicionar icons no menu:
+primeiro pesqiso a bliblioteca de icnons do google (google icons)
+importo a blblioetca de estilo do google, no momento é:
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+depois dentro da tag <i></i> (a tag <i> ja foi de idatico, mas hoje pode
+ser usado para icon) coloco o nome do icon e na tag i coloco
+"material-icons" para importar o icone, dessa forma:
+  <i class="material-icons">menu</i>
+
+
+  como fazer um menu hamburguinho:
+  1: no css dou um display none pra sumir com os itens
+  1:coloco um evento javascript chamado onclick na tag <li> onde ira conter o item
+  2:dou um id para a tag menu onde ira conter os itens
+  3: crio uma função para o evento onclick onde vou especificar oque vai fazer quando
+  for clicado.
+  4: em seguida puxo o id do menu e coloco um estilo css display block.
+  assim os itens do menu ira aparecer quando for clicado no icone.
+  exemplo do codigo javascript:
+  <script>
+            function clickMenu(){
+              itens.style.display = 'block'
+            }
+        </script>
+
+  icone aparecendo e sumindo quando clicado:
+  pra fazer aparecer e sumir os icones eu preciso criar uma condição,
+  onde caso os icones forem igual a block ( ou seja aparcendo ), dentro do evento 
+  onclick, ele recebe o display none (ou seja, não vai aparecer) se não
+  ele receb display block (continua aparecendo)o
+  exemplo javascript: 
+    <script>
+           function clickMenu() {
+    var itens = document.getElementById("itens");
+    if (itens.style.display == 'block') {
+        itens.style.display = "none";
+    } else {
+        itens.style.display = 'block';
+    }
+}
+        </script>o   
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilo/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1> meu site </h1>
+        <i id="burguer" class="material-icons" onclick="clickMenu()">menu</i>
+        <menu id="itens">
+            <ul>
+                <li><a href="#">home1</a></li>
+                <li><a href="#">home2</a></li>
+                <li><a href="#">home3</a></li>
+                <li><a href="#">home4</a></li>      
+            </ul>
+        </menu>
+
+        <main>
+            <article>
+                <h2>Testando medias queries</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laboriosam vel nulla architecto consequatur! Nihil soluta totam 
+                quam, vel, hic nam iusto, facilis placeat dolorem incidunt ipsam 
+                odio. Sapiente, sunt animi?</p>
+ soluta totam quam, vel, hic nam iusto, facilis placeat dolorem incidunt ipsam odio. Sapiente, sunt animi?
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam vel nulla architecto consequatur! Nihil soluta totam quam, vel, hic nam iusto, facilis placeat dolorem incidunt ipsam odio. Sapiente, sunt animi?
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam vel nulla architecto consequatur! Nihil soluta totam quam, vel, hic nam iusto, facilis placeat dolorem incidunt ipsam odio. Sapiente, sunt animi?
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Laoriosam vel nulla architecto consequatur! Nihil soluta totam quam, vel, hic nam iusto, facilis placeat dolorem incidunt ipsam
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laboriosam vel nulla architecto consequatur! Nihil soluta totam  soluta totam quam, vel, hic nam iusto, facilis placeat dolorem incidunt ipsam odio. Sapiente, sunt animi?
+                
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam vel nulla architecto consequatur! Nihil soluta totam quam, vel, hic nam iusto, facilis placeat dolorem incidunt ipsam odio. Sapiente, sunt animi?
+                
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam vel nulla architecto consequatur! Nihil soluta totam quam, vel, hic nam iusto, facilis placeat dolorem incidunt ipsam odio. Sapiente, sunt animi?
+                
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laoriosam vel nulla architecto consequatur! Nihil soluta totam quam, vel, hic nam iusto, facilis placeat dolorem incidunt ipsam
+                quam, vel, hic nam iusto, facilis placeat dolorem incidunt ipsam 
+                odio. Sapiente, sunt animi?</p>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laboriosam vel nulla architecto consequatur! Nihil soluta totam 
+                quam, vel, hic nam iusto, facilis placeat dolorem incidunt ipsam 
+                odio. Sapiente, sunt animi?</p>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laoriosam vel nulla architecto consequatur! Nihil soluta totam 
+                quam, vel, hic nam iusto, facilis placeat dolorem incidunt ipsam 
+                odio. Sapiente, sunt animi?</p>
+            </article>
+        </main>
+
+        <script>
+           function clickMenu() {
+    var itens = document.getElementById("itens");
+    if (itens.style.display == 'block') {
+        itens.style.display = "none";
+    } else {
+        itens.style.display = 'block';
+    }
+}
+        </script>
+    </header>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!--
+calculo em css:
+caso eu precise encaixar duas coisas no mesmo bloco eu posso fazer
+calculo com css
+ex: eu tenho um icone de 40px ao lado do input senha, e preciso
+que o width do input ocupa 100% da caixa, como posso fazer o calculo
+sem quebrar pra baixo?
+
+
+- widht calc (): com esse codigo eu coloco entre parenteres o calculo
+que o css deve fazer
+ex:  
+width: calc (100% - 45 px)
+
+explicação:
+dessa forma o icone que tem 40px vai esta no mesmo bloco do input e 
+o inout irá ocupar 100% e não vai descer pro bloco de baixo
+
+
+dica importante:
+usar os tranform sempre no final, isso evita bugs
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estlo/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <section id="login">
+            <div id="imagem">
+                 
+            </div>
+            <div id="formulario">
+               <h1>login</h1>
+               <p>seja vem-vindo(a) novamente. Faça login para acessar sua conta e
+                poder fazer as configurações no seu ambiente.
+               </p>
+               <form action="login.php" method="post" autocomplete="on">
+
+                <div class="campo">
+                    <i class="material-icons">person</i>
+                    <input type="email" name="login" id="ilogin" placeholder="Seu E-mail"
+                    autocomplete="email" minlength="8"  required maxlength="30">
+                    <label for="ilogin">login</label>
+
+                </div>
+                
+                <div class="campo">
+                    <i class="material-icons">vpn_key</i>
+                    <input type="password" name="senha" id="isenha" placeholder="sua senha"
+                    autocomplete="current-password" required minlength="8" maxlength="30">
+                    <label for="isenha">lenha</label>
+                </div>
+                   <div>
+                    <input type="submit" value="Enviar" id="en" class="in">
+                    <a href="index.html" class="botao">Esqueci a senha
+                        <i class="material-icons">mail</i>
+                    </a>
+                   </div>
+
+               </form>
+            </div>
+        </section>
+    </main>
+</body>

@@ -1,0 +1,171 @@
+<!--
+
+input do tipo email.
+
+- input type = "email" = input tipo email. se eu não colocar um @,
+ele mostra um balão falando pro usuario que o email não é valido e
+que precisa de @
+- autocomplete="email"= autocomplete para email
+
+input do tipo telefone:
+- input type = "tel" =tem compatlidade com aparelho de lista telefonica
+- autocomplete="tel" ou "mobile" ou "tel-area-code" = aceita esses 3 
+valores de autocomplete para telefone
+
+
+
+
+
+
+
+(profesor pediu pra estudar e ensunou o basico disso abaixo.)
+
+
+
+Atributo Pattern (HTML5)
+
+1. Definição
+
+O atributo pattern especifica uma expressão regular para validar o conteúdo
+ de um campo input. Para que o formulário seja enviado, o valor inserido no 
+ campo deve seguir o padrão especificado.
+
+
+---
+
+2. O que são Expressões Regulares (RegEx)
+
+Expressões Regulares (RegEx) são uma forma de notação usada para
+definir padrões de texto. Elas permitem:
+
+
+- Buscas avançadas: Encontrar padrões específicos, como datas no formato dd/mm/aaaa.
+- Validações em texto: Verificar se uma sequência de caracteres segue 
+um formato pré-definido (caso do atributo pattern).
+- Substituições: Trocar partes específicas de um texto com base em padrões.
+
+
+oberservação: RegEx pode ser usado em diversas ferramentas e linguagens de programação, 
+como Visual Studio Code, JavaScript, PHP, entre outras.
+tabém podem ser executadas em qualquer sequencia de caracteres, 
+seja paragrafo de livro, texto estruturado ou até o
+proprio conteudo do codigo.
+
+
+---
+
+3. Estrutura das Expressões Regulares
+
+Para definir padrões com o atributo pattern, é importante usar os marcadores:
+
+^: Indica o início da sequência.
+
+$: Indica o final da sequência.
+
+
+Outras estruturas comuns:
+
+Classes de caracteres: Definem quais caracteres são permitidos. Exemplo: [0-9] aceita números de 0 a 9.
+
+Intervalos: Especificam a quantidade de caracteres permitidos. Exemplo: {4,5} aceita de 4 a 5 caracteres.
+
+
+
+---
+
+4. Exemplo prático (Validação de telefone)
+
+Validação de números no formato xxxx-xxxx ou xxxxx-xxxx:
+
+<input type="tel" pattern="^[0-9]{4,5}-[0-9]{4}$">
+
+Explicação:
+
+^[0-9]: dentro de colchetes, dizemos que a classe só Aceita números entre 0 e 9.
+
+{4,5}: dentro de chaves, só aceita (deixa um intervalo) de 4 a 5 números antes do traço.
+
+-: colocabdo - e outra classe de caracteres ou numeros, Exige a presença do traço na parte do usuario,
+no caso desse exemplo, após 4 ou 5 numeros, exibe a presença do - pra começar a outra classe que
+vai ter 4 numeros {4}.
+
+[0-9]{4}$: Aceita exatamente 4 números após o traço.
+
+
+
+---
+
+5. Aplicações comuns do RegEx
+
+É possível validar diversos tipos de dados com expressões regulares:
+
+Data (dd/mm/aaaa)
+
+E-mail
+
+URL
+
+CPF/RG
+
+Endereço IP
+
+
+
+---
+
+6. Cuidados e Considerações
+
+O atributo pattern funciona com inputs dos tipos text, password, tel,
+ number, email, entre outros.
+
+Limitações: O pattern não bloqueia todos os dados inseridos incorretamente.
+ Recomenda-se fazer validações adicionais com linguagens como JavaScript ou PHP.
+
+
+
+---
+
+7. Conclusão
+
+O atributo pattern permite validar o conteúdo de campos input através de 
+expressões regulares. Caso o valor não esteja conforme o padrão definido, 
+o formulário não será enviado.
+
+
+
+
+conjunto de campos (fieldset):
+por fim, a tag <fieldset></fieldset> cria um conjuto de campos, posso incluir todo o formularios
+em apenas uma caixa que é o fieldset
+- ele também cria uma borda em forma de caixa
+
+---
+
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" autocomplete="on" method="get">
+        <p>
+            <label for="imeail">Email:</label>
+            <input type="email" name="email" id="imeail" autocomplete="email" required>
+        </p>
+
+        <p>
+            <label for="intel">Telefone:</label>
+            <input type="tel" name="tel" id="intel" autocomplete="tel"pattern="^[0-9]{4,5}-[0-9]{4}$" required>
+        </p>
+
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Reniciar">
+    </form>
+</body>
+</html>

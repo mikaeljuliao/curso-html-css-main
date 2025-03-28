@@ -1,0 +1,100 @@
+<!--
+metodos de envios de dados atraés de formulario:
+
+
+
+Envio de Dados de um Formulário:
+
+Quando enviamos dados de um formulário HTML para uma 
+linguagem de programação , utilizamos os métodos 
+GET e POST, definidos no atributo method da tag <form>.
+Esses métodos determinam como os dados serão transmitidos 
+ao servidor através do protocolo HTTP.
+
+ex: <form action="cadastro.php" method="get" autocomplete="off">
+
+
+
+HTTP: Protocolo de Comunicação:
+O HTTP (HyperText Transfer Protocol) é um protocolo usado 
+para comunicação na web, permitindo a troca de informações 
+entre navegadores e servidores. Ele funciona no formato de pedido e resposta.
+
+1. O cliente (navegador) envia uma requisição HTTP com informações ao servidor.
+
+2. O servidor processa a requisição e responde com um arquivo, como uma página HTML.
+
+
+
+O HTTP opera com métodos chamados verbos, entre eles os mais comuns são o GET e o POST.
+
+
+
+método GET:
+
+Como funciona: Os dados são enviados na própria URL, separados por um ?.
+Visibilidade: Os dados ficam visíveis na barra de endereços.
+Quando usar:
+- Pesquisas em sites (como Google, Amazon, ml)
+ — porque os resultados podem ser compartilhados pela URL.
+- Dados não sensíveis, como nome ou preferências de busca.
+
+
+Limitações:
+
+- Limite de cerca de 3 mil caracteres.
+- Não pode ser usado para envio de arquivos.
+
+
+método POST:
+
+Como funciona: Os dados são enviados no corpo da requisição HTTP.
+Visibilidade: Os dados não aparecem na URL, mas podem ser vistos no DevTools.
+Quando usar:
+Dados sensíveis (senha, número de cartão).
+Envio de arquivos (fotos, documentos).
+Segurança: Para dados críticos, combine POST com o protocolo HTTPS para proteção.
+
+
+
+
+Escolhendo Entre GET e POST:
+
+GET: Para obter dados ou compartilhar informações, como pesquisas, quando os 
+dados não forem sensíveis 
+
+POST: Para processar e salvar dados, como cadastros, idade, email, etc, 
+ou envio de arquivos. Dados sensível onde não quero que apareça na URL , 
+ou quando queremos salvar alguma informação no servidor, como criar
+algum recurso ou cadastro de um novo cliente 
+
+
+
+
+
+
+
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="cadastro.php" method="post" autocomplete="off">
+        <p> <label for="inome">nome:</label>
+         <input type="text" name="nome" id="inome"></p>
+
+        <p> <label for="isobrenome"> sobrenome:</label> 
+        <input type="text" name="sobrenome" id="isobrenome"></p>
+
+        <p><input type="submit" value="Enviar"></p>
+    </form>
+</body>
+</body>
+</html>

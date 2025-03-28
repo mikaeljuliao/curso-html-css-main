@@ -1,0 +1,191 @@
+<!--
+ELEMENTO SELECT
+
+A tag <select>tem a função parecida com input é utilizada
+ para renderizar um componente de 
+entrada em formulários que exibe um menu de opções. Em vez
+ de o usuário digitar um dado, ele seleciona uma opção de uma 
+ lista pré-definida. Essa abordagem é ideal para escolhas de dados
+  imutáveis, como selecionar um dos estados do Brasil, já que a lista
+   de opções é fixa.
+
+Principais pontos:
+
+Vínculo com Label:
+Assim como outros elementos de entrada, o <select> deve ter os
+atributos name e id configurados e estar associado a uma
+<label> para melhorar a usabilidade.
+
+Definição das opções:
+As opções disponíveis são definidas com a tag <option>, 
+que deve estar contida dentro do <select>.
+Exemplo:
+<option value="SC">Santa Catarina</option>
+
+importante, valor enviado para servidor:
+o valor que será enviado para o servidor é o 
+conteúdo do atributo value (SC).
+
+Agrupamento de opções:
+Se houver necessidade de organizar as opções em categorias, 
+como usar os estados do brasil e separar por regioes, sul,suldeste...
+utiliza-se a tag <optgroup>. Essa tag envolve e envelopa um conjunto de 
+<option> e requer o atributo label, (se trata do atributo label e não da tag)
+que define o título do grupo exibido para o usuário.
+Exemplo:
+<optgroup label="Região Sul"> ... </optgroup>
+
+Ordem das opções:
+As opções são exibidas na ordem em que aparecem no código HTML.
+
+Atributo selected:
+Dentro de um <option>, o atributo selected pode ser usado para 
+definir qual opção aparecerá selecionada por padrão quando a página for carregada.
+Exemplo:
+<option value="SP" selected>São Paulo</option>
+
+
+
+---
+considerações:
+Essa estrutura torna o <select> uma ferramenta prática para permitir que o 
+usuário escolha entre opções fixas e bem definidas, facilitando a entrada 
+de dados que não precisam de digitação manual.
+
+
+exemplo final:
+<form action="processar.php" method="POST">
+    <label for="categoria">Escolha uma categoria:</label>
+    <select id="categoria" name="categoria">
+        <optgroup label="Tecnologia">
+            <option value="computadores">Computadores</option>
+            <option value="celulares">Celulares</option>
+        </optgroup>
+        <optgroup label="Eletrodomésticos">
+            <option value="geladeira">Geladeira</option>
+            <option value="fogao">Fogão</option>
+        </optgroup>
+    </select>
+    <button type="submit">Enviar</button>
+</form>
+---
+
+
+Elemento <datalist>
+
+O <datalist> é utilizado para fornecer uma lista de opções
+sugeridas para um campo de entrada <input>. Diferente do 
+<select>, ele permite que o usuário digite livremente no 
+campo e ainda escolha uma opção da lista sugerida.
+
+Como usar:
+
+O <datalist> deve ter um id que será vinculado ao atributo list de um elemento <input>.
+
+As opções disponíveis são definidas com a tag <option>.
+
+
+Exemplo básico:
+
+<label for="fruit">Escolha uma fruta:</label>
+<input list="fruits" id="fruit" name="fruit">
+<datalist id="fruits">
+  <option value="Maçã">
+  <option value="Banana">
+  <option value="Laranja">
+  <option value="Manga">
+  <option value="Uva">
+</datalist>
+
+Nesse exemplo, ao digitar no campo de entrada, o navegador sugere as 
+frutas listadas no <datalist>. O usuário pode selecionar uma das
+opções ou digitar outra fruta manualmente.
+
+Características importantes:
+
+O usuário pode digitar livremente, não ficando limitado às opções da lista.
+
+O <datalist> não exibe um menu suspenso por padrão, apenas sugere opções conforme o usuário digita.
+
+
+
+
+Elemento <textarea>
+
+O <textarea> é usado para criar campos de texto que permitem a
+entrada de várias linhas, diferente do <input>, que geralmente 
+é para textos curtos e de uma única linha.
+
+Atributos importantes:
+
+rows: Define o número de linhas visíveis do campo.
+
+cols: Define a largura do campo em termos de número de caracteres visíveis.
+
+placeholder: Exibe um texto de sugestão dentro do campo.
+
+maxlength: Limita o número máximo de caracteres permitidos.
+
+readonly: Torna o campo somente leitura.
+
+disabled: Desabilita o campo, tornando-o não editável.
+
+required: Exige que o campo seja preenchido para enviar o formulário.
+
+
+Exemplo básico:
+
+<label for="mensagem">Mensagem:</label>
+<textarea id="mensagem" name="mensagem" rows="5" cols="30" 
+placeholder="Digite sua mensagem aqui..."></textarea>
+
+Exemplo com limite de caracteres:
+
+<textarea id="comentario" name="comentario" rows="4" cols="50" 
+maxlength="200" placeholder="Digite seu comentário (máximo 200 caracteres)"></textarea>
+
+Nesse exemplo, o campo permitirá até 200 caracteres e exibirá o texto de sugestão
+"Digite seu comentário..." enquanto estiver vazio.
+
+
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="processar.php" method="POST">
+        <label for="categoria">Escolha uma categoria:</label>
+        <select id="categoria" name="categoria">
+            <optgroup label="Tecnologia">
+                <option value="computadores">Computadores</option>
+                <option value="celulares">Celulares</option>
+            </optgroup>
+            <optgroup label="Eletrodomésticos">
+                <option value="geladeira">Geladeira</option>
+                <option value="fogao">Fogão</option>
+            </optgroup>
+            <optgroup label="Moda">
+                <option value="roupas">Roupas</option>
+                <option value="calcados">Calçados</option>
+            </optgroup>
+        </select>
+        <button type="submit">Enviar</button>
+    </form>
+    
+    <label for="fruit">Escolha uma fruta:</label>
+<input list="fruits" id="fruit" name="fruit">
+<datalist id="fruits">
+  <option value="Maçã">
+  <option value="Banana">
+  <option value="Laranja">
+  <option value="Manga">
+  <option value="Uva">
+</datalist>
+</body>
+</html>

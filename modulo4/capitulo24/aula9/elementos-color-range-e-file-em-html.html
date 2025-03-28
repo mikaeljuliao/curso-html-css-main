@@ -1,0 +1,178 @@
+<!--
+
+input do tipo color:
+esse imput exibe uma caixinha pro usuario onde irá conter um 
+seletor de cores RGB
+
+- cor inicial:
+value: Define uma cor inicial especificada por mim, como red.
+
+exemplo de uso:
+<input type="color" name="cor" id="icor" value="red">
+
+Input Range: O que é e como funciona
+
+O input do tipo range é usadopara permitir
+ que o usuário selecione um valor dentro de uma faixa contínua, 
+ arrastando um controle deslizante (slider). Ele é visualmente
+  representado por uma barra com um "ponto" que o usuário pode 
+  arrastar de um lado para outro.
+
+Principais Atributos:
+
+min: Define o valor mínimo do intervalo.
+
+max: Define o valor máximo do intervalo.
+
+step: Especifica os incrementos entre os valores permitidos.
+
+value: Define o valor inicial do controle deslizante.
+
+
+Exemplo Prático:
+
+<form>
+  <label for="volume">Volume:</label>
+  <input type="range" id="volume" name="volume" min="0" max="100" value="50" step="5">
+  <span id="range-value">50</span>
+</form>
+
+Como Funciona:
+
+O slider começa no valor definido pelo atributo value (nesse caso, 50).
+
+O usuário pode arrastar o controle entre 0 e 100, com incrementos de 5 (definido pelo step).
+
+
+Input do Tipo File
+
+O input do tipo file permite que o usuário selecione um arquivo do 
+seu dispositivo para enviar em um formulário HTML. Ele geralmente
+ aparece como um botão com uma nota ao lado, indicando o status do 
+ arquivo anexado.
+
+Quando Usar:
+Esse tipo de campo é ideal para situações onde o usuário precisa fazer
+ upload de arquivos, como imagens, documentos, vídeos ou áudios.
+
+Como Funciona:
+
+1. O usuário escolhe o arquivo, o file aceita qualquet tipo de arquivo como,
+imagens,áudios,vídeos,documentos do word, PDFS e por ai vai
+.
+
+
+2. Esse arquivo só é enviado ao servidor quando o formulário é submetido.
+
+
+3. O método de envio deve ser obrigatoriamente POST.
+
+
+
+
+---
+
+Atributo enctype
+
+Para garantir que o servidor receba os arquivos corretamente,
+ você precisa configurar o formulário com o atributo enctype.
+
+O que é enctype?
+O enctype define como os dados do formulário devem ser codificados
+antes de serem enviados ao servidor. Ele não faz o envio em si, isso é
+trabalho do protocolo HTTP, ele apenas especifica a forma correta de
+codificação dos dados.
+
+por que é necessário?
+Arquivos são compostos por dados binários (sequências de bytes). 
+Sem a codificação correta, o servidor não consegue interpretar esses dados.
+por exemplo, arquivo de imagem representa uma squencia de bits (pixels), e arquivo
+de texto, cada caractere é um byte
+
+
+---
+
+Valores Possíveis para enctype:
+aceita 3 possiveis valores e são eles
+
+1. application/x-www-form-urlencoded (Padrão)
+
+Usado para enviar apenas dados simples, como texto.
+
+Não suporta arquivos binários.
+
+
+
+2. multipart/form-data (Obrigatório para arquivos)
+
+
+mais importante no caso de envio de arquivo, codifica cada
+campo do formulário individualmente, permitindo que arquivos
+ sejam enviados corretamente.
+
+Exemplo: <form action="/upload" method="post" enctype="multipart/form-data"> 
+    <input type="file" name="arquivo"> <button type="submit">Enviar</button> </form>
+
+
+
+3. text/plain (Pouco usado)
+
+Envia os dados sem codificação, útil apenas para testes.
+
+
+
+
+
+Como usar o atributo enctype?
+
+O atributo enctype deve ser inserido dentro da tag de abertura do formulário (<form>), 
+sendo que ele só pode ser usado se o método de envio dos dados for "post". 
+Isso ocorre porque o método get envia os dados do formulário na URL e não 
+suporta o envio de dados binários, como arquivos.
+
+Exemplo de código:
+
+<form action="upload.php" method="post" enctype="multipart/form-data">
+  <label for="file">Escolha um arquivo:</label>
+  <input type="file" id="file" name="file">
+  <button type="submit">Enviar</button>
+</form>
+
+
+Cuidados Importantes:
+
+Sempre use enctype="multipart/form-data" para upload de arquivos.
+
+Certifique-se de que o back-end esteja preparado para tratar os arquivos recebidos.
+
+Cada input file deve ter um name único.
+
+o atributo enctype o metodo de envio de dados precisa ser post
+e formularios configurados coo o metodo get, por padrão, utilzam a forma de
+codificação "aplication/x-www-form-urlencoded"
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<form action="upload.php" method="post" enctype="multipart/form-data">
+
+    <p>
+        <label for="icor">Cor:</label>
+        <input type="color" name="cor" id="icor" value="red">
+    </p>
+    <label for="file">Escolha um arquivo:</label>
+    <input type="file" id="file" name="file">
+    <button type="submit">Enviar</button>
+  </form>
+
+  
+</body>
+</html>

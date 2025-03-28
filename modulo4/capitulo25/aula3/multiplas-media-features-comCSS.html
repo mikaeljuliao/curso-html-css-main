@@ -1,0 +1,152 @@
+<!--
+Múltiplas Media Queries com CSS
+
+As múltiplas media queries permitem que você defina diferentes
+estilos para diferentes tamanhos de tela ou dispositivos. 
+Isso possibilita criar layouts responsivos, adaptando o design
+conforme a resolução do usuário.
+
+
+---
+
+Por que usar múltiplas media queries?
+
+Adaptar o site a diferentes telas → Permite criar 
+um design responsivo para celulares, tablets e desktops.
+
+Melhor experiência do usuário → Garante que o conteúdo
+ fique legível e organizado em qualquer dispositivo.
+
+Controle total do layout → Você pode personalizar cada 
+detalhe do site para diferentes resoluções.
+
+
+
+---
+
+Como usar múltiplas media queries?
+
+Você pode declarar várias media queries no mesmo arquivo CSS,
+especificando os tamanhos de tela que deseja personalizar.
+
+Exemplo básico:
+
+/* Estilos padrão para todos os dispositivos */
+body {
+    font-size: 16px;
+    background: white;
+}
+
+/* Para telas menores que 768px (celulares) */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+        background: lightgray;
+    }
+}
+
+/* Para telas maiores que 1024px (desktops) */
+@media (min-width: 1024px) {
+    body {
+        font-size: 18px;
+        background: lightblue;
+    }
+}
+
+
+---
+
+Orientação da Tela: Retrato (portrait) vs. Paisagem (landscape)
+
+Os dispositivos podem mudar entre duas orientações de tela:
+
+1: Portrait (retrato) → Quando a altura é maior que a largura (celular em pé).
+
+2: Landscape (paisagem) → Quando a largura é maior que a altura (celular deitado).
+
+
+Para entender melhor, pense assim:
+
+Quando você tira uma foto de uma paisagem (landscape), o celular está deitado.
+
+Quando você tira uma selfie ou um retrato (portrait), o celular está em pé.
+
+
+Para aplicar estilos diferentes com base na orientação da tela, usamos:
+
+@media (orientation: portrait) {
+    body {
+        background: lightcoral;
+    }
+}
+
+@media (orientation: landscape) {
+    body {
+        background: lightgreen;
+    }
+}
+
+Ou, se estiver chamando um arquivo CSS externo:
+
+<link rel="stylesheet" href="estilos/retrato.css" media="screen and (orientation: portrait)">
+<link rel="stylesheet" href="estilos/paisagem.css" media="screen and (orientation: landscape)">
+
+
+---
+
+Diferença entre Media Types e Media Features
+
+1: Media Types : Os Media Types definem o tipo de dispositivo que será afetado 
+pelas regras CSS. Eles são escritos dentro das aspas sem parênteses:
+
+media="screen"     -- Aplicado a telas --
+media="print"      -- Aplicado a impressoras --
+media="all"        -- Aplicado a todos os dispositivos --
+
+2: Media Features: Já as Media Features são as caaracteristicas dos 
+media types,ele que configuramos varios tipos de Features 
+para varias telas diferentes,
+escritas dentro de parênteses e vêm logo após o Media Type:
+
+- media="screen and (orientation: portrait)"
+
+Exemplo de uso em um <link> para estilos externos:
+-- Aplica a todos os dispositivos --
+<link rel="stylesheet" href="estilos/style.css" media="all"> 
+ -- telas com altura maior --
+<link rel="stylesheet" href="estilos/retrato.css" media="screen and (orientation: portrait)">
+-- telas com largura maior --
+<link rel="stylesheet" href="estilos/paisagem.css" media="screen and (orientation: landscape)"> 
+
+
+Importante:
+
+Media Types → Não usam parênteses.
+
+Media Features → Sempre ficam dentro de parênteses isolados.
+
+
+Se houver três Media Features, cada uma deve estar entre parênteses, assim:
+
+@media screen and (min-width: 600px) and (max-width: 900px) and (orientation: portrait) {
+    body {
+        background: yellow;
+    }
+}
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"  href="estilos/style.css" media="all">
+    <link rel="stylesheet" href="estilos/retrato.css" media="screen and (orientation:portrait)">
+    <link rel="stylesheet" href="estilos/paisagem.css" media="screen and (orientation: landscape)">
+</head>
+<body>
+    <h1> Mude a orientação do seu dispositivo</h1>
+</body>
+</html>

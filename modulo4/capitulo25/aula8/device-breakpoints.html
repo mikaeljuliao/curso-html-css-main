@@ -1,0 +1,125 @@
+<!--
+1. O que são Breakpoints?
+
+Breakpoints são larguras de tela específicas onde o design muda para
+se ajustar ao tamanho do dispositivo. Isso é feito com media queries no CSS.
+
+Exemplo de um breakpoint para telas maiores que 768px:
+
+@media (min-width: 768px) {
+    body {
+        background-color: blue;
+    }
+}
+
+Isso significa que, em telas a partir de 768px, o fundo ficará azul.
+
+
+---
+
+2. O que são Topical Device Breakpoints?
+
+São breakpoints definidos com base nos dispositivos mais usados em 
+um determinado período. Como as telas de celulares, tablets e computadores
+evoluem, os valores dos breakpoints podem mudar com o tempo.
+
+Antigamente, um tablet era considerado grande se tivesse 768px de largura.
+Hoje, há celulares maiores que isso. Então, os breakpoints precisam ser
+ajustados conforme os padrões atuais de dispositivos.
+
+
+Exemplo de Topical Device Breakpoints (2024):
+
+Os valores a seguir são os mais comuns hoje, mas podem mudar no futuro:
+
+- Mobile pequeno: até 360px
+- Mobile médio: 360px – 480px
+- Mobile grande: 480px – 600px
+- Tablets: 600px – 1024px
+- Laptops e desktops pequenos: 1024px – 1366px
+- Desktops grandes: acima de 1366px
+
+
+---
+
+3. Como Usar Breakpoints de Forma Inteligente
+
+Em vez de depender de valores fixos, você pode usar uma abordagem flexível 
+baseada no conteúdo do seu site.
+
+Exemplo de código para breakpoints flexíveis:
+
+/* Estilos padrão para mobile (Mobile First) */
+body {
+    font-size: 16px;
+}
+
+/* Ajusta o design para tablets */
+@media (min-width: 600px) {
+    body {
+        font-size: 18px;
+    }
+}
+
+/* Ajusta para desktops */
+@media (min-width: 1024px) {
+    body {
+        font-size: 20px;
+    }
+}
+
+Com isso, o texto fica maior conforme a tela aumenta, melhorando
+a experiência do usuário.
+
+
+---
+
+4. Por que os Breakpoints Mudam com o Tempo?
+
+1. Dispositivos novos surgem – Antes, celulares tinham 320px, hoje temos
+smartphones de 450px ou mais.
+
+
+2. Resolução de tela aumenta – Celulares modernos têm telas com resoluções
+maiores e mais densidade de pixels.
+
+
+3. Mudanças no comportamento dos usuários – Mais pessoas usam tablets na
+horizontal, o que pode exigir ajustes nos breakpoints.
+
+
+
+---
+
+5. Resumo
+
+Breakpoints são pontos onde o layout muda para se adaptar a diferentes telas.
+
+Topical Device Breakpoints são os valores usados no momento, mas mudam conforme a tecnologia avança.
+
+O ideal é adotar uma abordagem flexível, focando no conteúdo e experiência do usuário,
+em vez de apenas números fixos.
+
+
+Agora ficou mais claro para você?
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilo/style.css" media="all">
+    <link rel="stylesheet" href="-estilos/media-style.css">
+</head>
+<body>
+    <main>
+    <h1>testando media queries</h1>
+    <img id="phone" src="imagens/icon-phone.png" alt="Acessando via smartphone">
+    <img id="tablet" src="imagens/icon-tablet.png" alt="Acessando via tablet">
+    <img id="print" src="imagens/icon-print.png" alt="Acessando para impressão">
+    <img id="pc" src="imagens/icon-pc.png" alt="versão para desktop">
+    </main>
+</body>
+</html>

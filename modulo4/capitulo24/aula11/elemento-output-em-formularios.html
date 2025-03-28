@@ -1,0 +1,162 @@
+<!--
+ Elemento <output> no HTML
+
+O elemento <output> é utilizado para exibir um resultado de cálculo ou ação do usuário. 
+ele funciona como um elemento de saída, ou seja, exibe um valor processado por um script,
+mas não permite entrada de dados como os <input>.
+
+Funcionamento do <output>
+
+O <output> deve estar associado a um script, que irá calcular um valor e exibi-lo dentro do elemento.
+
+Ele pode ser identificado por um id ou um name, permitindo que seja manipulado via JavaScript.
+
+O valor exibido pelo <output> não é enviado ao servidor ao submeter o formulário. Para isso,
+é necessário um <input type="hidden"> para armazenar o valor.
+
+
+Exemplo de uso do <output>
+
+<form action="cadastro.php" method="get">
+    <fieldset>
+        <legend>Teste - output</legend>
+
+        <label for="n1">Digite o primeiro número:</label>
+        <input type="number" name="n1" id="n1" required oninput="resultado.innerHTML
+         = Number(n1.value) + Number(n2.value)">
+
+        <label for="n2">Digite o segundo número:</label>
+        <input type="number" name="n2" id="n2" required oninput="resultado.innerHTML 
+        = Number(n1.value) + Number(n2.value)">
+
+        <label for="resultado">Resultado da soma:</label>
+        <output for="n1 n2" id="resultado"></output>
+
+        <div>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </div>
+    </fieldset>
+</form>
+
+Explicação do código
+
+Dois inputs numéricos (<input type="number">) recebem os valores de entrada.
+
+O atributo oninput nos inputs dispara um script JavaScript que soma os dois 
+valores e exibe o resultado dentro do <output>.
+
+O atributo for no <output> indica que ele está relacionado aos inputs n1 e n2,
+ tornando o código mais semântico.
+
+
+
+---
+
+Atributos do <output>
+
+for → Indica os elementos que contribuíram para o resultado exibido no <output>.
+Deve conter os id's dos elementos de entrada separados por espaço.
+
+Exemplo: <output for="n1 n2">
+
+
+
+Uso do id e name no <output>
+
+1. Quando usar id?
+
+Se o seu script trabalha com apenas um <output>, use o id para identificá-lo
+e manipulá-lo diretamente no JavaScript.
+
+2. Quando usar name?
+
+Se houver vários <output> que compartilham a mesma função, use o name, 
+permitindo acessá-los como um grupo.
+
+3. Exemplo prático:
+
+<input type="number" id="n1" oninput="atualizar()">
+<input type="number" id="n2" oninput="atualizar()">
+
+<output name="resultado"></output>
+<output name="resultado"></output>
+
+<script>
+    function atualizar() {
+        let num1 = Number(n1.value);
+        let num2 = Number(n2.value);
+        let outputs = document.getElementsByName("resultado");
+
+        outputs[0].innerHTML = num1 + num2; // Exemplo de soma
+        outputs[1].innerHTML = num1 * num2; // Exemplo de multiplicação
+    }
+</script>
+
+Aqui, os <output> compartilham name="resultado", permitindo que o
+script os atualize ao mesmo tempo.
+
+
+
+Observações importantes
+
+1. O <output> não é obrigatório para exibir resultados. Outros elementos como <div>,
+<span> ou <p> também podem ser usados.
+
+
+2. Se precisar enviar o valor ao servidor, será necessário um <input type="hidden">
+para armazenar o valor do <output>.
+
+
+3. O <output> melhora a semântica do HTML, tornando o código mais organizado e fácil de entender.
+
+
+
+
+---
+
+Com essa anotação, fica fácil entender como o <output> funciona e como aplicá-lo corretamente!
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="number" name="n1" id="in1">
+    <label for="in1">+</label>
+
+    <input type="number" name="n2" id="in2">
+    <label for="in2"></label>
+
+    <output name="resultado" id="in1"> Valor  </output>
+
+    <input type="hidden" name="enviar" >
+
+<!--
+<input type="number" id="n1" oninput="atualizar()">
+<input type="number" id="n2" oninput="atualizar()">
+
+<output name="resultado"></output>
+<output name="resultado"></output>
+
+<script>
+    function atualizar() {
+        let num1 = Number(n1.value);
+        let num2 = Number(n2.value);
+        let outputs = document.getElementsByName("resultado");
+
+        outputs[0].innerHTML = num1 + num2; // Exemplo de soma
+        outputs[1].innerHTML = num1 * num2; // Exemplo de multiplicação
+    }
+</script>
+-->
+    
+</body>
+</html>

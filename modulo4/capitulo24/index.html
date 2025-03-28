@@ -1,0 +1,27 @@
+<!DOCTYPE html><html>
+  <head>
+    <meta charset="utf-8">
+    <title>Personalize sua Camisa</title>
+  </head>
+  <body>
+    <h2>Escolha a cor da sua camisa</h2>
+    <label for="shirtColor">Cor:</label>
+    <input type="color" id="shirtColor" name="shirtColor" value="#ff0000">
+    <br><br>
+    <button id="sendWhatsApp">Enviar Cor para WhatsApp</button><script>
+  document.getElementById("sendWhatsApp").addEventListener("click", function() {
+    // Obtém o valor da cor escolhida
+    var color = document.getElementById("shirtColor").value;
+    // Cria a mensagem com o código da cor (formato hexadecimal)
+    var message = encodeURIComponent("Olá, eu escolhi a cor " + color + " para a minha camisa personalizada.");
+    // Número do WhatsApp no formato internacional (exemplo: "5511999999999" para Brasil)
+    var phoneNumber = "5511999999999"; // Substitua pelo número desejado
+    // Gera o link do WhatsApp com a mensagem
+    var url = "https://wa.me/" + phoneNumber + "?text=" + message;
+    // Redireciona para o WhatsApp
+    window.location.href = url;
+  });
+</script>
+
+  </body>
+</html>

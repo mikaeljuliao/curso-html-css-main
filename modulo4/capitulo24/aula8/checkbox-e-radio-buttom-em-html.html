@@ -1,0 +1,151 @@
+<!--
+
+TIPOS DE INPUT PARA FORMULÁRIOS
+
+Checkbox:
+
+O input do tipo checkbox cria e siginifica uma "caixa de seleção", exibida como um pequeno 
+quadrado que pode ser marcado com um clique. Ele permite que o usuário
+escolha uma ou mais opções de um conjunto limitado.
+
+Características principais:
+
+- Possibilita selecionar várias opções ao mesmo tempo.
+
+- Apenas os valores das caixas marcadas são enviados ao back-end durante a 
+submissão do form.
+
+- Necessário definir o atributo value, que representa o valor da opção marcada.
+ Se não for definido, o valor enviado será "on".
+
+
+Boas práticas:
+
+- Utilize a mesma nomenclatura para o atributo name das caixas que pertencem 
+ao mesmo grupo, indicando que são opções relacionadas.
+
+- Cada checkbox deve ter um id único.
+
+- Estabeleça o vínculo entre o checkbox e sua respectiva label com o atributo for.
+
+
+Exemplo de código:
+
+<form action="cadastro.php" method="get">
+    <fieldset>
+       <legend>Qual dessas é a sua linguagem de programação preferida?</legend>
+        <input type="checkbox" name="linguagem" id="js" value="JavaScript">
+   <label for="js">JavaScript</label>
+
+   <input type="checkbox" name="linguagem" id="php" value="PHP">
+   <label for="php">PHP</label>
+
+   <input type="checkbox" name="linguagem" id="python" value="Python"> 
+   <label for="python">Python</label>
+</fieldset>
+
+
+resumo checkbox:
+O checkbox é um campo onde o usuário pode marcar uma ou mais opções predefinidas,
+ podendo ativar ou desativar valores. Se nada for marcado, nada é enviado; 
+ se uma ou mais forem marcadas, apenas essas informações seguem para o back-end.
+
+</form>
+---
+
+Radio
+
+O input do tipo radio cria botões circulares que permitem a seleção de apenas uma opção por grupo.
+
+Características principais:
+
+O usuário pode selecionar apenas uma opção por grupo.
+
+Ao clicar em uma opção, a anterior é automaticamente desmarcada.
+
+Não é possível deixar todas as opções em branco após selecionar uma, a menos que a página seja recarregada.
+
+apenas o valor selecionado será enviado para o back end
+
+Necessário definir o atributo value, que será enviado ao back-end. Se não definido, o valor enviado será "on".
+
+
+Boas práticas:
+
+Utilize a mesma nomenclatura para o atributo name dos botões que pertencem ao mesmo grupo.
+
+Cada botão deve ter um id único.
+
+Estabeleça o vínculo entre o radio button e sua respectiva label com o atributo for.
+
+
+obervação importante sobre os input radio:
+No input radio, os atributos "name" e "id" devem ser configurados normalmente.
+Quando houver mais de um radio button representando opções de um mesmo contexto,
+ o "name" precisa ser igual para formar um grupo, garantindo que o usuário selecione 
+ apenas uma opção.
+
+Se os "name" forem diferentes, o sistema entenderá como grupos distintos, 
+permitindo selecionar múltiplas opções. Para dois grupos não relacionados, 
+cada grupo deve ter um "name" diferente, mas o "id" sempre será único para 
+cada botão. Além disso, o vínculo com a label deve ser corretamente configurado.
+
+
+Exemplo de código:
+
+<form action="cadastro.php" method="get">
+    <fieldset>
+        <legend>Escolha a opção que lhe atende:</legend><input type="radio"
+         name="opcao" id="masculino" value="M">
+    <label for="masculino">Masculino</label>
+
+    <input type="radio" name="opcao" id="feminino" value="F">
+    <label for="feminino">Feminino</label>
+</fieldset>
+
+</form>
+
+
+deixar algum input marcado inicialmente:
+se eu faço uma pergunta ao usuario do tipo, quais importes voce prefere, 
+eu posso deixar o input que tem o futebol marcado inicialmente com checked 
+ex: 
+   <input type="checkbox" name="esbas" id="iesbas" checked>
+            <label for="iesbas"></label> basquete
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Exemplo de fórmularios</h1>
+    
+    <form action="" method="get" autocomplete="on">
+       
+
+        <fieldset>
+            <legend>sexo</legend>
+            <input type="radio" name="se" id="isefem" value="F">
+            <label for="isefem"> feminino</label>
+
+            <input type="radio" name="se" id="isemas" value="M" checked>
+            <label for="isemas">Masculino</label>
+        </fieldset>
+        <fieldset>
+            <legend>Esportes favoritosS</legend>
+            <input type="checkbox" name="esbas" id="iesbas" checked>
+            <label for="iesbas"></label> basquete <br>
+            <input type="checkbox" name="esfut" id="iesfut"> futebol  <br>
+            <input type="checkbox" name="esnat" id="iesnat"> natação   <br>
+            <input type="checkbox" name="esten" id="iesten"> ténis     <br>
+        </fieldset>
+
+    </form>
+</body>
+</html>

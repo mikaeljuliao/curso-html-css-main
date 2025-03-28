@@ -1,0 +1,120 @@
+<!--
+O que é Mobile First?
+
+O conceito Mobile First é uma abordagem no design e desenvolvimento 
+web que prioriza dispositivos móveis antes de desktops. Em vez de 
+criar um site primeiro para telas grandes e depois adaptá-lo para 
+celulares, o Mobile First começa pelos dispositivos menores e, em 
+seguida, expande para telas maiores.
+
+
+---
+
+Por que usar Mobile First?
+
+1. Experiência do Usuário Melhorada → A maioria das pessoas acessa 
+a web pelo celular. Criar um site pensado primeiro para dispositivos 
+móveis garante uma navegação mais fluida.
+
+
+2. Melhor Performance → Sites Mobile First são mais leves, carregam 
+mais rápido e evitam elementos desnecessários que poderiam prejudicar 
+o desempenho.
+
+
+3. SEO Melhorado → O Google prioriza sites otimizados para mobile no ranking
+ dos resultados de busca.
+
+
+4. Facilidade de Adaptação (Progressive Enhancement) → Criando primeiro 
+para mobile, fica mais fácil expandir para telas maiores adicionando recursos extras.
+
+
+
+
+---
+
+Como Aplicar Mobile First no CSS?
+
+A ideia é começar com o layout para telas pequenas e depois usar
+media queries para dispositivos maiores.
+
+1. Criando o Estilo Base (Mobile)
+
+body {
+  font-size: 16px;
+  color: #333;
+  padding: 10px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+➡️ Aqui, o layout é pensado para celulares, com um tamanho de 
+fonte confortável e os elementos dispostos em coluna.
+
+
+---
+
+2. Ajustando para Telas Maiores (Desktop)
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+  }
+}
+
+➡️ Quando a largura da tela for 768px ou mais (tablets e desktops),
+os elementos serão exibidos em linha ao invés de coluna.
+
+
+---
+
+Exemplo Completo
+
+/* Estilos padrão para mobile */
+body {
+  font-size: 16px;
+  padding: 10px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Quando a tela for maior que 768px, ajusta para desktop */
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+
+---
+
+Dicas Importantes
+
+✔ Use unidades flexíveis → Prefira em, %, vw e vh ao invés 
+de px para melhor adaptação.
+✔ Evite larguras fixas → Use max-width: 100% para imagens 
+e elementos grandes.
+✔ Teste sempre → Use o Modo Responsivo do DevTools do navegador
+ para testar diferentes tamanhos de tela.
+
+-->
+ <!DOCTYPE html>
+ <html lang="pt-br">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    
+ </body>
+ </html>

@@ -1,0 +1,45 @@
+<!--
+forms usada para criar  mobile  first dessa aula foi:
+- criar um arquivo separado com media = all e + um arquivo
+separado para media= scren onde ira contar todos os style de midia.
+
+
+ex: no html:
+<head>
+    <link rel="stylesheet" href="estilo/style.css" media="all">
+    <link rel="stylesheet" href="-estilos/media-style.css">
+</head>
+
+
+metodo para exeir apenas uma imagem com mobile first:
+
+
+img#phone {display: block;}
+img#tablet {display: none;}
+img#print {display: none;}
+img#pc {display: none;}
+img#tv {display: none;}
+
+explicação: a tag + id, coloquei entre chaves o display block para celular
+e o resto none para que não apareça
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilo/style.css" media="all">
+    <link rel="stylesheet" href="-estilos/media-style.css">
+</head>
+<body>
+    <main>
+    <h1>testando media queries</h1>
+    <img id="phone" src="imagens/icon-phone.png" alt="Acessando via smartphone">
+    <img id="tablet" src="imagens/icon-tablet.png" alt="Acessando via tablet">
+    <img id="print" src="imagens/icon-print.png" alt="Acessando para impressão">
+    <img id="pc" src="imagens/icon-pc.png" alt="versão para desktop">
+    </main>
+</body>
+</html>

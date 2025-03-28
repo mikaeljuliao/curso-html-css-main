@@ -1,0 +1,218 @@
+<!--
+
+ Media Queries para Impressão (@media print)
+
+As media queries para impressão permitem definir estilos
+específicos para quando um usuário imprime a página. 
+Isso é feito usando @media print no CSS.
+
+
+---
+
+Por que usar media queries para impressão?
+
+1. Remover elementos desnecessários → Ocultar menus, botões,
+anúncios e qualquer coisa que não faça sentido no papel.
+2. Ajustar o layout → Alterar tamanhos de fontes, margens 
+e cores para melhor leitura na impressão.
+3. Evitar desperdício de tinta → Substituir cores vibrantes 
+por tons de cinza ou preto.
+4. Melhorar a organização → Garantir que o conteúdo fique 
+bem distribuído na folha impressa.
+
+
+
+
+---
+
+Como o usuário pode imprimir a página?
+O usuário pode imprimir com:
+1. Atalho do teclado:
+Ctrl + P (Windows/Linux)
+
+---
+
+Exemplo básico de @media print
+
+@media print {
+    body {
+        font-size: 14pt; /* Aumenta o tamanho da fonte para melhor leitura */
+        color: black; /* Evita impressões com cores fortes */
+        background: none; /* Remove fundos coloridos */
+    }
+
+    nav, button, .ad, footer {
+        display: none; /* Oculta menus, botões e anúncios */
+    }
+}
+
+
+---
+
+Explicação do código:
+
+@media print → Define regras que só se aplicam ao imprimir.
+
+display: none; → Esconde elementos desnecessários na impressão.
+
+background: none; → Remove fundos coloridos para economizar tinta.
+
+
+Isso ajuda a transformar um site normal em um layout limpo e otimizado para papel.
+
+
+---
+
+Como Importar Media Queries para Diferentes Mídias?
+
+Quando criamos um site responsivo tanto para telas (screen) quanto 
+para impressão (print), o ideal é separar os estilos em arquivos CSS diferentes.
+
+Passo 1: Criando Arquivos CSS Separados
+
+1. Arquivo para telas (screen):
+Crie um arquivo chamado style-screen.css
+Nele, coloque os estilos para dispositivos como computadores, celulares e tablets.
+
+
+
+2. Arquivo para impressão (print):
+Crie um arquivo chamado style-print.css
+Nele, coloque os estilos específicos para quando a página for impressa.
+
+
+---
+
+Passo 2: Importando os Arquivos CSS no HTML
+
+No HTML, importe os arquivos usando a tag <link> e o atributo media:
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Media Queries</title>
+    
+    -- Estilos para telas (computadores, celulares, tablets) --
+    <link rel="stylesheet" href="style-screen.css" media="screen">
+
+    -- Estilos para impressão --
+    <link rel="stylesheet" href="style-print.css" media="print">
+</head>
+<body>
+
+</body>
+</html>
+
+
+---
+
+Passo 3: Criando os Arquivos de Estilo
+
+Arquivo style-screen.css (Para Telas)
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Fundo cinza na tela */
+    color: #333;
+    padding: 20px;
+}
+
+nav {
+    background-color: #007BFF;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+Arquivo style-print.css (Para Impressão)
+
+@media print {
+    body {
+        font-family: "Times New Roman", serif;
+        background: none; /* Remove fundo colorido */
+        color: black;
+    }
+
+    nav, button {
+        display: none; /* Oculta menus e botões na impressão */
+    }
+
+    h1 {
+        page-break-before: always; /* Faz títulos começarem em uma nova página */
+    }
+}
+
+Dexplicacão, iferenças entre screen e print:
+
+- Fundo: No screen (tela), o fundo pode ser colorido, enquanto 
+no print (impressão), ele geralmente é removido para economizar tinta.
+
+- Elementos visíveis: Na tela, menus, botões e anúncios são visíveis.
+Na impressão, esses elementos costumam ser ocultos.
+
+- Fonte: Para telas, fontes como Arial, mais modernas, são comuns. Na impressão,
+fontes tradicionais como Times New Roman são mais utilizadas.
+
+- Cores: No screen, é possível usar cores vibrantes. Já no print, geralmente 
+se usa apenas preto e branco para evitar desperdício de tinta.
+
+- Quebra de página: Na tela, não há necessidade de quebras de página. 
+Na impressão, usa-se page-break para organizar melhor o conteúdo.
+
+Isso garante que a experiência do usuário seja boa tanto na tela quanto no papel.
+
+
+
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Noticias</h1>
+        <menu>
+            <ul>
+                <li>Esporte</li>
+                <li>Política</li>
+                <li>Tecnologia</li>
+            </ul>
+        </menu>
+    </header>
+    <main>
+        <article>
+           <h2>Estou apredendo a criar Media Queries</h2>
+
+           <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Accusamus fugit rem blanditiis aliquam dignissimos fugiat,
+            natus facilis consequatur praesentium ducimus sunt nulla,
+            quisquam odit, quae ullam doloribus illo nam ex.</p>
+
+
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Accusamus fugit rem blanditiis aliquam dignissimos fugiat,
+            natus facilis consequatur praesentium ducimus sunt nulla,
+            quisquam odit, quae ullam doloribus illo nam ex.</p>
+
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Accusamus fugit rem blanditiis aliquam dignissimos fugiat,
+            natus facilis consequatur praesentium ducimus sunt nulla,
+                </p>
+        </article>
+    </main>
+</body>
+</html>

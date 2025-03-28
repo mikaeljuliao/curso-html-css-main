@@ -1,0 +1,173 @@
+<!--
+Tipos de Input para Formulários
+
+
+
+1. Input do tipo number:
+Permite que o usuário digite apenas números.
+
+Aceita também símbolos como “+”, “-”, vírgula e ponto.
+
+Apresenta botões de setas para aumentar ou diminuir o valor, variando conforme o navegador.
+
+Observação: Placeholders funcionam normalmente, mesmo com frases contendo letras.
+
+
+
+---
+
+2. Input do tipo month:
+Permite a seleção de um mês e ano.
+
+possui um pequeno menu para escolher os mês e o ano
+com um mouse atraves de uma interface com botões ou calendário.
+
+Formato enviado para o servidor: yyyy-mm.
+
+
+
+---
+
+3. Input do tipo date:
+Aceita dia, mês e ano, completos.
+
+assim como no input month, possui um pequeno menu,
+para dia,mês e ano. Apresenta uma interface de calendário para seleção.
+
+Formato enviado para o servidor: yyyy-mm-dd.
+
+
+
+---
+
+4. Input do tipo time:
+Permite a entrada de horas e minutos (opcionalmente segundos).
+
+Interface com botões giratórios para seleção de horários.
+
+Formato enviado para o servidor: hh:mm.
+
+
+
+---
+
+Atributos própio Mais Usados para Inputs descrito acima
+
+1. min:
+Define um valor mínimo permitido.
+
+Exemplo: min="8" no input number, exige valores iguais ou maiores que 8.
+
+validos para os input e seus Formatos da sintaxe:
+
+date: yyyy-mm-dd
+
+month: yyyy-mm
+
+time: hh:mm
+
+number: Valor numérico simples.
+
+
+
+Observação: Não confundir com minlength, que define quantidade mínima de caracteres.
+já o min serve para estabelecer um valor minimo aceitavel no que se refere ao valor
+do contéudo proprialmente dito
+
+
+---
+
+2. max:
+Define um valor máximo permitido.
+
+Exemplo: max="15" no input number, exige valores iguais ou menores que 15.
+
+validos para os input e seus Formatos da sintaxe:
+
+date: yyyy-mm-dd
+
+month: yyyy-mm
+
+time: hh:mm
+
+number: Valor numérico simples.
+
+
+
+Observação: Não confundir com maxlength, que limita a quantidade de caracteres.
+já o max estabelece um valor maximo aceitavel
+
+
+---
+
+3. step:
+Define o intervalo de incremento/decremento nos valores.
+
+Exemplo: step="3" em um input number,especificq que ao clicarmos
+nos botões giratorios, permite aumentar ou diminuir de 3 em 3 unidades.
+
+Para valores quebrados: step="0.1".
+
+No input time, valores menores que 60 determinam intervalos em segundos.
+ex: pra determinar intervalo de 3 minutos, insiro o valor 180 segungos(3 minitos)
+
+O valor padrão do step é 1, mas pode ser alterado para any, permitindo valores não padronizados.
+
+
+Observação: Mesmo com step definido, o usuário pode inserir manualmente 
+valores fora do intervalo, mas não conseguirá submeter o formulário,
+aparecendo um pequeno balão em baixo do campo alertando os valores proximos aceitos.
+
+
+---
+
+4. value:
+Define um valor inicial para o input.
+
+Exemplo: value="10" em um input number, faz com que o valor inicial exibido seja 10.
+
+Observação: Se value estiver presente, placeholder não será exibido.
+
+
+
+
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1> teste de formulario </h1>
+
+   <form action="" method="get" autocomplete="on">
+
+    <label for="inome">nome:</label>
+    <input type="text" name="nome" id="inome" placeholder="nome completo"
+    autocomplete="name" required>
+
+    <p>
+        <label for="imedia">média
+            <input type="number" name="media" id="imedia" value="5" step="0.1" required>
+        </label>
+    </p>
+
+    <p>
+        <label for="imes">mês:
+            <input type="month" name="mes" id="imes" value="2020-07">
+        </label>
+    </p>
+    
+    <p>
+        <label for="idia">
+            <input type="date" name="dia" id="idia"  value="2020-07-14">
+        </label>
+    </p>
+    <input type="submit" value="enviar">
+    <input type="reset" value="reniciar">
+   </form>
+</body>
+</html>

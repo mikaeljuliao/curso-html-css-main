@@ -1,0 +1,95 @@
+<!--
+Reunindo tudo em um único CSS
+segunda forma de usar media queries, prinicipalente pra projetos pequenos
+é no mesmo arquivo do
+
+	1: Pode ser feito usando a tag <style>, dentro de <head>, 
+    usando @media para especificar o tipo de mídia e 'and' para unir os 'media features';
+	2: Além disso pode ser feito também usando o 'link:css' para criar um arquivo de estilo separado.
+
+ <head>
+    <style>
+Ex:	@charset "UTF-8";
+
+	/* declarações gerais */
+	
+	@media all {
+		h1 {
+    			color: white;
+    			text-shadow: 2px 2px 0px #1526a7;
+    			padding: 10px;
+		}
+	}
+
+	/* declarações retrato */
+
+	@media screen and (orientation: portrait) {
+		body {
+        			background-image: url(../imagens/cev-portrait.jpg);
+        			background-position: center bottom;
+    		}
+	}
+
+	/* declarações paisagem */
+
+	@media screen and (orientation: landscape) {
+    		body {
+        			background-image: url(../imagens/cev-landscape.jpg);
+        			background-position: left bottom;
+    		}
+	}
+    </style>
+</head>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* declarações gerais */
+        *{
+         margin: 0px;
+         padding: 0px;
+         font-family: Arial, Helvetica, sans-serif;
+     }
+        body{
+         width: 100vw;
+         height: 100vh;
+         background-color: #233eff;
+         background-size: contain;
+         background-repeat: no-repeat;
+  
+     }    
+        h1 {
+         color: white;
+         text-shadow: 2px 2px 0px #132188;
+         padding: 10px;
+     }	
+
+        /* declarações retrato */
+        @media screen and (orientation: portrait) {
+            body{
+                background-image: url(./imagens/cev-portrait.jpg);
+                background-position: center bottom;
+            }
+        }
+      
+       /* declarações paisagem */
+
+       @media screen and (orientation: landscape) {
+
+        body{
+            background-image: url(./imagens/cev-landscape.jpg);
+            background-position: left bottom;
+        }
+        
+       }
+    </style>
+</head>
+<body>
+    <h1> Mude a orientação do seu dispositivo</h1>
+</body>
+</html>
